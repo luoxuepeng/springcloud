@@ -1,0 +1,17 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: order-system
+eureka:
+  client:
+    service-url:
+      defaultZone: http://150.109.146.119:6781/eureka
+    healthcheck:
+      enabled: true #开启健康检查（需要spring-boot-starter-actuator依赖）
+  instance:
+    ip-address: 150.109.146.119 #决定Eureka服务显示host
+    prefer-ip-address: true #不设可自己指定，true会自动获取本地ipv4地址
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10 # 租期更新时间间隔（默认30秒）
+    leaseExpirationDurationInSeconds: 30 # 租期到期时间（默认90秒）

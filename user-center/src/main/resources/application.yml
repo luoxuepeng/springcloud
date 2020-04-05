@@ -1,0 +1,21 @@
+server:
+  port: 8089
+eureka:
+  client:
+    service-url:
+      defaultZone: http://150.109.146.119:6781/eureka
+spring:
+  application:
+    name: user-center
+
+#feign的配置，连接超时及读取超时配置
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+# debug: true

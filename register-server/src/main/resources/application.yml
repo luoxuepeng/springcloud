@@ -1,0 +1,15 @@
+server:
+  port: 6781 #服务注册中心端口号
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #是否向服务注册中心注册自己
+    fetchRegistry: false #是否检索服务
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心位置
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #关闭自我保护,为true则开启,为false则关闭
+    enable-self-preservation: false
+    #清理间隔(单位:毫秒,默认是60*1000)
+    eviction-interval-timer-in-ms: 5000
