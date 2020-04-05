@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
+    private String serverName;
     private String id;
     private List<Product> productList;
     private String desc;

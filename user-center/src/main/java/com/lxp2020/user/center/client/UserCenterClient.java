@@ -4,7 +4,6 @@ import com.lxp2020.user.center.client.impl.UserCenterClientFallback;
 import com.lxp2020.user.center.model.Order;
 import com.lxp2020.user.center.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

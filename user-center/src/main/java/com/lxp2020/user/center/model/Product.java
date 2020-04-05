@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-
+    private String serverName;
     private String id;
     private String desc;
     private double price;

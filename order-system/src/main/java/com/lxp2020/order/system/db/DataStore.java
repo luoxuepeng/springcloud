@@ -1,5 +1,6 @@
 package com.lxp2020.order.system.db;
 
+import com.lxp2020.order.system.OrderSystemApplication;
 import com.lxp2020.order.system.model.Order;
 import com.lxp2020.order.system.model.Product;
 
@@ -24,6 +25,7 @@ public class DataStore {
                     .name(UUID.randomUUID().toString().substring(2,12))
                     .desc("computer")
                     .price(bg.setScale(2, RoundingMode.HALF_UP).doubleValue())
+                    .serverName(OrderSystemApplication.serverName)
                     .build();
             productList.add(product);
         }
@@ -34,7 +36,7 @@ public class DataStore {
                     .count(random.nextInt(100))
                     .price(bg.setScale(2, RoundingMode.HALF_UP).doubleValue())
                     .desc("product "+ i)
-                    .userId("123asgths")
+                    .serverName(OrderSystemApplication.serverName)
                     .build();
             orderList.add(order);
         }
@@ -47,6 +49,7 @@ public class DataStore {
         for(int i =0; i<len; i++){
             products.add(productList.get(random.nextInt(MAX_LEN)));
         }
+        order.setServerName(OrderSystemApplication.serverName);
         order.setProductList(products);
         return order;
     }
@@ -54,6 +57,7 @@ public class DataStore {
     public static Product getProductById(String id){
         Product product = productList.get(random.nextInt(MAX_LEN));
         product.setId(id);
+        product.setServerName(OrderSystemApplication.serverName);
         return product;
     }
 }

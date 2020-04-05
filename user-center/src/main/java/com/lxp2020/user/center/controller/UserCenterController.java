@@ -30,7 +30,7 @@ public class UserCenterController {
     @GetMapping("order")
     public Order getOrderInfo(String userId) {
         Order order = userCenterService.getOrderByUserId(userId);
-        log.info("order : " + order.toString());
+        log.info("order from server  " + order.getServerName());
         return order;
     }
 
@@ -38,7 +38,7 @@ public class UserCenterController {
     @GetMapping("product")
     public Product getProductById(String id) {
         Product product = userCenterService.getProductById(id);
-        log.info("product : " + product.toString());
+        log.info("product from server  " + product.getServerName());
         return product;
     }
 }

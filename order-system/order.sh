@@ -78,11 +78,11 @@ start() {
      echo ">>>> start server"
      echo "${APP_NAME} is already running. pid=${pid} ."
    else
-     nohup java -Dserver.port=8071 -jar $APP_NAME >> Log8071.log 2>&1 &
+     nohup java -Dserver.port=8071 -Dtype=zhansan -jar $APP_NAME >> Log8071.log 2>&1 &
      sleep 1
-     nohup java -Dserver.port=8072 -jar $APP_NAME >> Log8072.log 2>&1 &
+     nohup java -Dserver.port=8072 -Dtype=lisi -jar $APP_NAME >> Log8072.log 2>&1 &
      sleep 1
-     nohup java -Dserver.port=8073 -jar $APP_NAME >> Log8073.log 2>&1 &
+     nohup java -Dserver.port=8073 -Dtype=wangwu -jar $APP_NAME >> Log8073.log 2>&1 &
    fi
    is_exist
    if [ $? -eq "0" ]; then

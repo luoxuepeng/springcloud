@@ -8,10 +8,10 @@ eureka:
     service-url:
       defaultZone: http://150.109.146.119:6781/eureka
     healthcheck:
-      enabled: true #¿ªÆô½¡¿µ¼ì²é£¨ĞèÒªspring-boot-starter-actuatorÒÀÀµ£©
+      enabled: true #å¼€å¯å¥åº·æ£€æŸ¥ï¼ˆéœ€è¦spring-boot-starter-actuatorä¾èµ–ï¼‰
   instance:
-    ip-address: 150.109.146.119 #¾ö¶¨Eureka·şÎñÏÔÊ¾host
-    prefer-ip-address: true #²»Éè¿É×Ô¼ºÖ¸¶¨£¬true»á×Ô¶¯»ñÈ¡±¾µØipv4µØÖ·
+    ip-address: 150.109.146.119 #å†³å®šEurekaæœåŠ¡æ˜¾ç¤ºhost
+    prefer-ip-address: true #ä¸è®¾å¯è‡ªå·±æŒ‡å®šï¼Œtrueä¼šè‡ªåŠ¨è·å–æœ¬åœ°ipv4åœ°å€
     instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
-    leaseRenewalIntervalInSeconds: 10 # ×âÆÚ¸üĞÂÊ±¼ä¼ä¸ô£¨Ä¬ÈÏ30Ãë£©
-    leaseExpirationDurationInSeconds: 30 # ×âÆÚµ½ÆÚÊ±¼ä£¨Ä¬ÈÏ90Ãë£©
+    leaseRenewalIntervalInSeconds: 10 # ç§ŸæœŸæ›´æ–°æ—¶é—´é—´éš”ï¼ˆé»˜è®¤30ç§’ï¼‰
+    leaseExpirationDurationInSeconds: 30 # ç§ŸæœŸåˆ°æœŸæ—¶é—´ï¼ˆé»˜è®¤90ç§’ï¼‰
